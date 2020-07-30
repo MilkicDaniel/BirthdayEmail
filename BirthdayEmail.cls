@@ -3,7 +3,7 @@ public with sharing class BirthdayEmail {
     public static void sendBirthdayMessage() {
 
         //Birthdate field is special and lets you use TODAY to get birthdays regardless of birth year
-        Contact[] contacts = [Select Name, Email FROM Contact WHERE Birthdate = TODAY AND Email != null LIMIT 5];
+        Contact[] contacts = [Select Name, Email FROM Contact WHERE Birthdate = TODAY AND Email != null];
         
         //returning if no one has a birthday today
         if(contacts.size() == 0)
